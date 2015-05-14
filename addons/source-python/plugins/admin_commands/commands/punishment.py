@@ -35,6 +35,7 @@ def sp_ban(source, command):
         for target in targets:
             engine_server.server_command("banid {} {}\n".format(time, userid_from_index(target)))
             engine_server.server_command("kickid {} {}\n".format(userid_from_index(target), reason))
+            engine_server.server_command("writeid")
         source.message("Banned " + str(len(targets)) + " players.")
     return CommandReturn.BLOCK
 
