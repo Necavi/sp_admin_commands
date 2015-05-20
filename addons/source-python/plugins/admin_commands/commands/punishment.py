@@ -1,5 +1,4 @@
-from players.helpers import userid_from_index
-from players.entity import PlayerEntity
+from players.helpers import userid_from_index, edict_from_index
 from commands import CommandReturn
 from engines.server import engine_server
 from .sp_utils.utils import target_filter, Command, message_client
@@ -59,8 +58,7 @@ def sp_slay(source, command):
         source.message("c=(white)[c=(purple)SPc=(white)] No Targets found.")
     else:
         for target in targets:
-            player = PlayerEntity(target)
-            player.take_damage(player.health)
-            message_client(player.index, "You have been slayed.")
+            engine_server.client_command(edict_from_index(target), "kill", True)
+            message_client(target, "You have been slayed.")
         source.message("c=(white)[c=(purple)SPc=(white)] Slayed " + str(len(targets)) + " players.")
     return CommandReturn.BLOCK
