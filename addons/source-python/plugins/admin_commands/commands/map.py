@@ -1,7 +1,7 @@
 from engines.server import engine_server
 from commands import CommandReturn
 from listeners.tick.delays import tick_delays
-from .sp_utils.utils import Command
+from .utils.utils import Command
 
 
 def change_map(level):

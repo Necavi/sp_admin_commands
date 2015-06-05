@@ -1,3 +1,3 @@
-[submodule "addons/source-python/plugins/admin_commands/sp_utils"]
-	path = addons/source-python/plugins/admin_commands/sp_utils
+[submodule "addons/source-python/plugins/admin_commands/utils"]
+	path = addons/source-python/plugins/admin_commands/utils
 	url = git@github.com:necavi/sp_utils.git

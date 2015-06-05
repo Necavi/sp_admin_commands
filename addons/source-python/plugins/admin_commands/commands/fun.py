@@ -1,6 +1,6 @@
 from players.entity import PlayerEntity
 from commands import CommandReturn
-from .sp_utils.utils import target_filter, Command, message_client
+from .utils.utils import target_filter, Command, message_client
 
 from entities.constants import MoveType
 from listeners.tick.delays import tick_delays
