@@ -9,7 +9,8 @@ from listeners.tick import Delay
 @Command("sp_ignite", permission="sp.fun.ignite")
 def sp_ignite(source, command):
     if command.get_arg_count() == 1:
-        source.message("c=(white)[c=(purple)SPc=(white)] Usage: c=(purple)sp_ignite $c=(white)<name|#userid|@filter> [time: 0]")
+        source.message("c=(white)[c=(purple)SPc=(white)] Usage: "
+                       "c=(purple)sp_ignite $c=(white)<name|#userid|@filter> [time: 0]")
         return CommandReturn.BLOCK
     targets = target_filter(command[1], source.index)
     time = int(command[2]) if command.get_arg_count() > 2 else 0
@@ -32,7 +33,8 @@ def unfreeze(player):
 @Command("sp_freeze", permission="sp.fun.freeze")
 def sp_ignite(source, command):
     if command.get_arg_count() == 1:
-        source.message("c=(white)[c=(purple)SPc=(white)] Usage: $c=(purple)sp_freeze $c=(white)<name|#userid|@filter> [time: 0]")
+        source.message("c=(white)[c=(purple)SPc=(white)] Usage: "
+                       "$c=(purple)sp_freeze $c=(white)<name|#userid|@filter> [time: 0]")
         return CommandReturn.BLOCK
     targets = target_filter(command[1], source.index)
     time = int(command[2]) if command.get_arg_count() > 2 else 0
@@ -53,7 +55,8 @@ def sp_ignite(source, command):
 @Command("sp_unfreeze", permission="sp.fun.unfreeze")
 def sp_ignite(source, command):
     if command.get_arg_count() == 1:
-        source.message("c=(white)[c=(purple)SPc=(white)] Usage: $c=(purple)sp_unfreeze $c=(white)<name|#userid|@filter>")
+        source.message("c=(white)[c=(purple)SPc=(white)] Usage: "
+                       "$c=(purple)sp_unfreeze $c=(white)<name|#userid|@filter>")
         return CommandReturn.BLOCK
     targets = target_filter(command[1], source.index)
     if len(targets) == 0:

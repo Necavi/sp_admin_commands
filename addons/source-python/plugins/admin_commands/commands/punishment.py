@@ -7,7 +7,8 @@ from ..utils.utils import target_filter, Command, message_client
 @Command("sp_kick", permission="sp.punishment.kick")
 def sp_kick(source, command):
     if command.get_arg_count() == 1:
-        source.message("c=(white)[c=(purple)SPc=(white)] Usage: $c=(purple)sp_kick $c=(white)<name|#userid|@filter> [reason: \"\"]")
+        source.message("c=(white)[c=(purple)SPc=(white)] Usage: "
+                       "$c=(purple)sp_kick $c=(white)<name|#userid|@filter> [reason: \"\"]")
         return CommandReturn.BLOCK
     targets = target_filter(command[1], source.index)
     if len(targets) == 0:
@@ -23,7 +24,8 @@ def sp_kick(source, command):
 @Command("sp_ban", permission="sp.punishment.ban")
 def sp_ban(source, command):
     if command.get_arg_count() == 1:
-        source.message("c=(white)[c=(purple)SPc=(white)] Usage: $c=(purple)sp_ban $c=(white)<name|#userid|@filter> [minutes: 0] [reason: \"\"]")
+        source.message("c=(white)[c=(purple)SPc=(white)] Usage: "
+                       "$c=(purple)sp_ban $c=(white)<name|#userid|@filter> [minutes: 0] [reason: \"\"]")
         return CommandReturn.BLOCK
     targets = target_filter(command[1], source.index)
     time = command[2] if command.get_arg_count() > 2 else 0
