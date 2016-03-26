@@ -1,9 +1,10 @@
 from players.entity import PlayerEntity
 from commands import CommandReturn
-from .utils.utils import target_filter, Command, message_client
+from ..utils.utils import target_filter, Command, message_client
 
 from entities.constants import MoveType
 from listeners.tick.delays import tick_delays
+
 
 @Command("sp_ignite", permission="sp.fun.ignite")
 def sp_ignite(source, command):

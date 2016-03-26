@@ -1,7 +1,7 @@
 import importlib.machinery
 import os
 
-from . import utils
+from .utils import utils
 from glob import glob
 
 from cvars.public import PublicConVar

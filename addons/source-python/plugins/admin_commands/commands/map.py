@@ -1,11 +1,8 @@
 from engines.server import engine_server
 from commands import CommandReturn
 from listeners.tick.delays import tick_delays
-from .utils.utils import Command
+from ..utils.utils import Command, change_map
 
-
-def change_map(level):
-    engine_server.change_level(level, None)
 
 @Command("sp_map", permission="sp.map.map")
 def sp_map(source, command):

@@ -1,5 +1,5 @@
 from commands import CommandReturn
-from .utils.utils import Command, target_filter
+from ..utils.utils import Command, target_filter
 
 
 @Command("sp_rename", permission="sp.player.rename")

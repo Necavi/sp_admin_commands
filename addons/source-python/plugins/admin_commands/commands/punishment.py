@@ -1,7 +1,7 @@
 from players.helpers import userid_from_index, edict_from_userid
 from commands import CommandReturn
 from engines.server import engine_server
-from .utils.utils import target_filter, Command, message_client
+from ..utils.utils import target_filter, Command, message_client
 
 
 @Command("sp_kick", permission="sp.punishment.kick")
