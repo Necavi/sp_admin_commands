@@ -1,9 +1,9 @@
-from players.entity import PlayerEntity
+from players.entity import Player
 from commands import CommandReturn
 from ..utils.utils import target_filter, Command, message_client
 
 from entities.constants import MoveType
-from listeners.tick.delays import tick_delays
+from listeners.tick import Delay
 
 
 @Command("sp_ignite", permission="sp.fun.ignite")
@@ -17,7 +17,7 @@ def sp_ignite(source, command):
         source.message("c=(white)[c=(purple)SPc=(white)] No Targets found.")
     else:
         for target in targets:
-            player = PlayerEntity(target)
+            player = Player(target)
             player.ignite_lifetime(time) if time > 0 else player.ignite()
             message_client(player.index, "You have been set on fire for " + str(time) + " seconds.")
         source.message("c=(white)[c=(purple)SPc=(white)] Set " + str(len(targets)) + " players on fire.")
@@ -40,10 +40,10 @@ def sp_ignite(source, command):
         source.message("c=(white)[c=(purple)SPc=(white)] No Targets found.")
     else:
         for target in targets:
-            player = PlayerEntity(target)
+            player = Player(target)
             player.move_type = MoveType.NONE
             if time != 0:
-                tick_delays.delay(time, unfreeze, player)
+                Delay(time, unfreeze, player)
                 message_client(player.index, "You have been frozen for " + str(time) + " seconds.")
             message_client(player.index, "You have been frozen.")
         source.message("c=(white)[c=(purple)SPc=(white)] Froze " + str(len(targets)) + " players.")
@@ -60,7 +60,7 @@ def sp_ignite(source, command):
         source.message("c=(white)[c=(purple)SPc=(white)] No Targets found.")
     else:
         for target in targets:
-            player = PlayerEntity(target)
+            player = Player(target)
             if player.move_type == MoveType.NONE:
                 player.move_type = MoveType.WALK
                 message_client(player.index, "You have been unfrozen.")

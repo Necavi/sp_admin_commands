@@ -1,6 +1,6 @@
 from engines.server import engine_server
 from commands import CommandReturn
-from listeners.tick.delays import tick_delays
+from listeners.tick import Delay
 from ..utils.utils import Command, change_map
 
 
@@ -13,5 +13,5 @@ def sp_map(source, command):
     if not engine_server.is_map_valid(level):
         source.message("c=(white)[c=(purple)SPc=(white)] Map not found")
         return CommandReturn.BLOCK
-    tick_delays.delay(3.0, change_map, level)
+    Delay(3, change_map, level)
     source.message("c=(white)[c=(purple)SPc=(white)] Changing map to {} in 3 seconds".format(level))

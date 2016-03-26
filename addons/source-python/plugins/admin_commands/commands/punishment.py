@@ -38,6 +38,7 @@ def sp_ban(source, command):
         source.message("c=(white)[c=(purple)SPc=(white)] Banned " + str(len(targets)) + " players.")
     return CommandReturn.BLOCK
 
+
 @Command("sp_unban", permission="sp.punishmnet.unban")
 def sp_unban(source, command):
     if command.get_arg_count() == 1:

@@ -13,7 +13,7 @@ info.author = "necavi"
 info.version = "0.1"
 info.basename = "admin_commands"
 info.variable = info.basename + "_version"
-info.convar = PublicConVar(info.variable, info.version, 0, info.name + " Version")
+info.convar = PublicConVar(info.variable, info.version, info.name + " Version")
 
 
 cwd = os.getcwd()
@@ -27,4 +27,3 @@ os.chdir(cwd)
 
 def unload():
     utils.unload()
-    
